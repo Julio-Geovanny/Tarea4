@@ -35,6 +35,33 @@ namespace Tarea4
                     }
                 }
 
+                Universidad universidad = new Universidad(capacidad);
+
+                for (int i = 0; i < capacidad; i++)
+                {
+                    Console.WriteLine($"\nRegistro del estudiante {i + 1}:");
+
+                    Console.Write("Nombre: ");
+                    string nombre = Console.ReadLine();
+
+                    int sesionesTotales;
+                    // Validar sesiones totales
+                    while (true)
+                    {
+                        Console.Write("Sesiones Totales: ");
+                        string input = Console.ReadLine();
+
+                        if (int.TryParse(input, out sesionesTotales) && sesionesTotales > 0)
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Las sesiones totales no pueden ser negativas o cero. Intente nuevamente.");
+                        }
+                    }
+
+                   
             }
         }
     }
