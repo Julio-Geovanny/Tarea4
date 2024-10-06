@@ -18,5 +18,25 @@ namespace Tarea4
             contadorEstudiantes = 0;
         }
 
+        public void RegistrarEstudiante(string nombre, int sesionesTotales, int sesionesAsistidas)
+        {
+            if (contadorEstudiantes < estudiantes.Length)
+            {
+                estudiantes[contadorEstudiantes] = new Estudiante(nombre, sesionesTotales, sesionesAsistidas);
+                contadorEstudiantes++;
+            }
+            else
+            {
+                Console.WriteLine("No se pueden registrar más estudiantes.");
+            }
+        }
+
+        public void MostrarEstudiantes()
+        {
+            for (int i = 0; i < contadorEstudiantes; i++)
+            {
+                estudiantes[i].MostrarInformacion();
+            }
+        }
     }
 }
