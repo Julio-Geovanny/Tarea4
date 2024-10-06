@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace Tarea4
     {
         class Program
@@ -61,10 +62,43 @@ namespace Tarea4
                         }
                     }
 
-                   
+                    int sesionesAsistidas;
+                    // Validar sesiones asistidas
+                    while (true)
+                    {
+                        Console.Write("Sesiones Asistidas: ");
+                        string input = Console.ReadLine();
+
+                        if (int.TryParse(input, out sesionesAsistidas))
+                        {
+                            if (sesionesAsistidas < 0)
+                            {
+                                Console.WriteLine("Las sesiones asistidas no pueden ser negativas. Intente nuevamente.");
+                            }
+                            else if (sesionesAsistidas > sesionesTotales)
+                            {
+                                Console.WriteLine("Las sesiones asistidas no pueden ser mayores que las sesiones totales. Intente nuevamente.");
+                            }
+                            else
+                            {
+                                break;
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Por favor, ingrese un número válido para las sesiones asistidas.");
+                        }
+                    }
+
+                    universidad.RegistrarEstudiante(nombre, sesionesTotales, sesionesAsistidas);
+                }
+
+                // Mostrar información de cada estudiante
+                Console.WriteLine("\nResumen de Asistencia:");
+                Console.WriteLine("\n:El porcentaje mínimo de aprobado es del 75%");
+                universidad.MostrarEstudiantes();
             }
         }
     }
 
     // Dirección de carpeta: C:\Users\Geovanny\sourse\repos\Tarea4
-}
