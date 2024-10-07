@@ -17,6 +17,7 @@ namespace Tarea4
 
                     if (int.TryParse(input, out capacidad))
                     {
+
                         if (capacidad <= 0)
                         {
                             Console.WriteLine("La capacidad no puede ser negativa o cero. Intente nuevamente.");
